@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Unzip source
-        run: unzip room-native-04.zip -d source
+        　run: unzip room-native-06.zip -d source
 
       - uses: actions/setup-java@v5
         with:
