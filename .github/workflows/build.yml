@@ -13,19 +13,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Unzip source
-        run: unzip room-native-10.zip -d source
-
-      - name: Fix duplicate variable
-        run: |
-          python3 - <<'PY'
-          from pathlib import Path
-          p = Path("source/room-android-v2/app/src/main/java/jp/roomhelper/NativePostService.java")
-          text = p.read_text()
-          text = text.replace("int editors=0", "int visibleEditorCount=0")
-          text = text.replace("editors++", "visibleEditorCount++")
-          text = text.replace("+editors+", "+visibleEditorCount+")
-          p.write_text(text)
-          PY
+        run: unzip room-native-11.zip -d source
 
       - uses: actions/setup-java@v5
         with:
